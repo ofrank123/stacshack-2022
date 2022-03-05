@@ -4,13 +4,13 @@ onready var _network_client = get_node("./NetworkClient")
 onready var _others = get_node("./Others")
 
 var player_id = ""
+var current_room = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_network_client.connect("gamestate", self, "_on_gamestate");
 
 func _on_gamestate(gamestate):
-	print("Gamestate:", gamestate)
 	for player in gamestate.players:
 		var found = false
 		for other in _others.get_children():
