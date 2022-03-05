@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal moved(new_pos)
+
 var velocity : Vector2 = Vector2()
 var direction : Vector2 = Vector2()
 var speed : = 694.20
@@ -23,6 +25,7 @@ func read_input():
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity*speed) #200 is the speed
 
-func _physics_process(delta: float) -> void: #runs every frame--player movement dealt with here
+func _physics_process(_delta: float) -> void: #runs every frame--player movement dealt with here
 	read_input()
+	emit_signal("moved", self.position)
 	
