@@ -16,28 +16,41 @@ script = ExtResource( 6 )
 
 [node name="StartRoom" parent="Rooms" instance=ExtResource( 1 )]
 position = Vector2( 96, 96 )
+room_likeliness = 25
 
 [node name="MiddleRoom" parent="Rooms" instance=ExtResource( 3 )]
 position = Vector2( 864, 96 )
 room_id = 1
+room_likeliness = 50
 
 [node name="MiddleRoom2" parent="Rooms" instance=ExtResource( 3 )]
 position = Vector2( 1632, 96 )
 room_id = 2
+room_likeliness = 50
 
 [node name="MiddleRoom3" parent="Rooms" instance=ExtResource( 3 )]
 position = Vector2( 2400, 96 )
 room_id = 3
+room_likeliness = 75
 
 [node name="MiddleRoom4" parent="Rooms" instance=ExtResource( 3 )]
 position = Vector2( 3168, 96 )
 room_id = 4
+room_likeliness = 25
 
 [node name="EndRoom" parent="Rooms" instance=ExtResource( 4 )]
 position = Vector2( 3936, 96 )
 room_id = 5
+room_likeliness = 75
 
 [node name="Others" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 277, 321 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

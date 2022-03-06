@@ -8,6 +8,9 @@ var speed : = 694.20
 
 export var last_executed_room := 1000 #just a large value
 export var is_busy := false
+export var executedDefuse := false
+
+signal player_defused_correctly
 
 func read_input():
 	velocity = Vector2()
@@ -39,3 +42,12 @@ func _on_Timer_timeout() -> void:
 	print("Timer finished!")
 #to do: for defuse button, if timer finished, room state only updated to 4 (i.e. room_states changed) IF FAILED.
 #otherwise, ending screen should show!
+	if (executedDefuse == true):
+		#this is defused
+		var rng = RandomNumberGenerator.new()
+		var roll = rng.randi_range(0, 100)
+		if roll <= RoomsData.roomLikeliness[last_executed_room]:
+			print("Defused")
+			emit_signal("player_defused_correctly")
+
+	executedDefuse = false

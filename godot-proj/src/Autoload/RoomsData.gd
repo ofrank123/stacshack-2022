@@ -7,6 +7,7 @@ signal rooms_updated
 var room_states: = "" setget set_roomState
 
 var roomsAndState := [0,0,0,0,0,0]
+var roomLikeliness := [25,100,50,25,50,75]
 
 func set_roomState(roomData:String) -> void:
 	var roomIndex = roomData[0]

@@ -11,10 +11,11 @@ func _pressed() -> void:
 	timer.start()
 	player.is_busy = true
 	player.last_executed_room = root.current_room
+	player.executedDefuse = true
 	
 func _process(delta):
 	# this plus the other people requirement
 	if (RoomsData.roomsAndState[root.current_room] == 2 and player.is_busy == false):
 		self.disabled= false
-	elif (player.is_busy):
+	else:
 		self.disabled = true
