@@ -46,6 +46,9 @@ function handleMessage(con, msg) {
         }
     }
 }
+function handleDisconnect(con, msg) {
+    // stub
+}
 
 function handleMove(con, msg) {
     player = gameState.players.find(player => player.id === msg.id)

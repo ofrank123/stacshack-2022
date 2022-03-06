@@ -14,6 +14,10 @@ config/name="Stacshack - 2022"
 run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+RoomsData="*res://src/Autoload/RoomsData.tscn"
+
 [input]
 
 up={
