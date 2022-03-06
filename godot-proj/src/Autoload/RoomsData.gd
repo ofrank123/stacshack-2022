@@ -15,3 +15,4 @@ func set_roomState(roomData:String) -> void:
 	roomsAndState[int(roomIndex)] = int(roomState)
 	print(roomsAndState)
 	emit_signal("rooms_updated",room_states)
+

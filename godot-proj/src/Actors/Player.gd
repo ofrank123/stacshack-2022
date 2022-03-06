@@ -6,6 +6,9 @@ var velocity : Vector2 = Vector2()
 var direction : Vector2 = Vector2()
 var speed : = 694.20
 
+export var last_executed_room := 1000 #just a large value
+export var is_busy := false
+
 func read_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("up"):
@@ -29,3 +32,10 @@ func _physics_process(_delta: float) -> void: #runs every frame--player movement
 	read_input()
 	emit_signal("moved", self.position)
 	
+
+func _on_Timer_timeout() -> void:
+	is_busy = false
+	RoomsData.room_states = str(last_executed_room) + str(RoomsData.roomsAndState[last_executed_room]+1)
+	print("Timer finished!")
+#to do: for defuse button, if timer finished, room state only updated to 4 (i.e. room_states changed) IF FAILED.
+#otherwise, ending screen should show!
