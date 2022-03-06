@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
+[ext_resource path="res://Investigate.gd" type="Script" id=3]
+[ext_resource path="res://Defuse.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 48 )
@@ -20,3 +22,19 @@ current = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -48 )
 shape = SubResource( 1 )
+
+[node name="Investigate" type="Button" parent="."]
+margin_left = -121.0
+margin_top = 27.0
+margin_right = -1.0
+margin_bottom = 67.0
+text = "Investigate"
+script = ExtResource( 3 )
+
+[node name="Defuse" type="Button" parent="."]
+margin_left = 15.0
+margin_top = 27.0
+margin_right = 127.0
+margin_bottom = 67.0
+text = "Defuse"
+script = ExtResource( 4 )

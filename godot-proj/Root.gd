@@ -22,5 +22,5 @@ func _on_gamestate(gamestate):
 			new_other.id = player.id
 			_others.add_child(new_other)
 
-func _process(_delta):
-	print(current_room)
+#func _process(_delta):
+#	print(current_room)
