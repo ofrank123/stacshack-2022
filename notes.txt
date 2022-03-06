@@ -1,0 +1,40 @@
+pseudocode
+
+[] = feel free to change.
+
+HARD CODE:
+4 people in total. 1 henchman.
+6 rooms in total.
+room likeliness set at the start of the game. 2 uncertain, 2 likely, 2 unlikely. 
+
+time? [a minute]
+
+INVESTIGATE
+- click investigate button
+- room state set to investigating
+- after [10] seconds, likeliness displayed to investigator
+- room state set as investigated.
+
+DEFUSE
+- check if room state investigated.
+- check if 3 or more people are in the room and have clicked the defuse button.
+- Defuse button can only be clicked/enabled WHEN there are >2 people in the room. use discord voice or something
+- set room state to defusing.
+- after [20] seconds, roll rng to determine if bomb has been defused, depending on the likeliness. 
+- if unsuccessful, room state set as defused (failed), and everyone is aware of this.
+
+STATES:
+0 = untouched
+1 = investigating
+2 = investigated 
+3 = defusing 
+4 = defusing (failed)
+
+CLIENT-SERVER communication:
+- timer for the game loop
+- timer for investigating/defusing
+- other people's movements (already done)
+- likeliness of rooms/state of rooms (oliver's problem)
+
+
+
